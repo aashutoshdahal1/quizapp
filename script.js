@@ -95,12 +95,13 @@ const displayResult = () => {
   let optiondiv = document.querySelector(".container__quizsection--option");
   let questiondiv = document.querySelector(".container__quizsection--question");
   let result = document.querySelector(".result");
+
   nextbtn.style.display = "none";
   questiondiv.style.display = "none";
   optiondiv.style.display = "none";
   result.style.display = "flex";
 
-  result.innerHTML = ` Your Score: ${score}/${data.length}`;
+  result.firstElementChild.innerHTML = ` Your Score: ${score}/${data.length}`;
 };
 const nextBtnHandle = () => {
   let options = document.querySelectorAll(".option");
@@ -129,6 +130,31 @@ let gameStart = () => {
     nextbtn.style.display = "flex";
   }, 1000);
 };
+
+const tryagainHandle = () => {
+  i = 0;
+  let wanttoplaydisplay = document.querySelector(".container__startdisplay");
+  let quizsection = document.querySelector(".container__quizsection");
+  let optiondiv = document.querySelector(".container__quizsection--option");
+  let container = document.querySelector(".container");
+  let questiondiv = document.querySelector(".container__quizsection--question");
+  let result = document.querySelector(".result");
+
+  nextbtn.style.display = "flex";
+  questiondiv.style.display = "block";
+  optiondiv.style.display = "block";
+  result.style.display = "none";
+
+  // wanttoplaydisplay.style.display = "none";
+  // quizsection.style.display = "block";
+  // optiondiv.style.display = "block";
+  // nextbtn.style.display = "flex";
+
+  DisplayQuestion();
+};
+let tryagain = document
+  .querySelector(".tryagain")
+  .addEventListener("click", tryagainHandle);
 let startbtn = document
   .querySelector("#playbtn")
   .addEventListener("click", gameStart);

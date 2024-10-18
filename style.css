@@ -28,6 +28,10 @@ body {
 .container:hover {
   box-shadow: 1px 1px 10px black;
 }
+
+.tryagain {
+  background-color: #4cb050;
+}
 .container__startdisplay {
   display: flex;
   height: 100%;
@@ -73,11 +77,20 @@ body {
   height: 100%;
 }
 .result {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
   height: 100%;
   font-size: 1.5rem;
+}
+.tryagain{
+  padding: 20px;
+  width: 40%;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
 }
 .container__quizsection {
   display: none;
